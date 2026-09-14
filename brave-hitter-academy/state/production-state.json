@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 2,
+  "updatedAt": "2026-09-12",
+  "currentChapter": {
+    "number": 12,
+    "status": "produced-qc-passed-awaiting-approval",
+    "workbookPages": "91-97",
+    "output": "production/pages/chapter-12"
+  },
+  "pageStatus": {
+    "exists": {
+      "pages": ["1-162"],
+      "meaning": "Expected editable sources, proof images, and section PDFs physically exist for every workbook page.",
+      "evidence": ["production/pages", "production/final/final-workbook-manifest.json"]
+    },
+    "produced": {
+      "pages": ["1-162"],
+      "meaning": "Production records identify every workbook page as built in its canonical section.",
+      "evidence": ["qc/SECTION_QC_LOG.md", "production/final/final-workbook-manifest.json"]
+    },
+    "qcPassed": {
+      "pages": ["1-162"],
+      "meaning": "Section QC and final preflight record every page as passing; this does not imply user approval.",
+      "evidence": ["qc/PAGE_QC_LOG.md", "qc/SECTION_QC_LOG.md", "qc/FINAL_PREFLIGHT.md"],
+      "notes": ["Game Day Journal pages 117-156 have QC-log and final-preflight PASS evidence but no section-local preflight.json."]
+    },
+    "approved": {
+      "pages": ["14-20", "157-162"],
+      "meaning": "Explicit approval is recorded in authoritative QC evidence.",
+      "evidence": ["qc/PAGE_QC_LOG.md:157", "qc/SECTION_QC_LOG.md:6", "qc/SECTION_QC_LOG.md:10"]
+    },
+    "requiresRepair": {
+      "pages": [],
+      "meaning": "No unresolved page or component failure is recorded."
+    }
+  },
+  "approvalPending": {
+    "pages": ["1-13", "21-156"],
+    "meaning": "Produced and QC-passed, but not explicitly approved in the current evidence."
+  },
+  "workbook": {
+    "productionStatus": "produced",
+    "qcStatus": "PASS",
+    "approvalStatus": "partially-approved",
+    "master": "production/final/brave-hitter-academy-final-workbook.pdf",
+    "sha256": "058f19209f24972993660b521dc86d2177baaa294223bbd253833f0694f5115f"
+  },
+  "nextAction": {
+    "type": "user-approval",
+    "scope": ["1-13", "21-156"],
+    "instruction": "Obtain explicit visual approval for pending pages. Do not begin new chapter production and do not modify workbook pages during workflow validation.",
+    "read": ["qc/SECTION_QC_LOG.md", "qc/PAGE_QC_LOG.md"]
+  }
+}

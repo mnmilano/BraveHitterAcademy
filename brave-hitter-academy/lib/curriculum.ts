@@ -1,0 +1,9 @@
+export type Chapter={id:string;order:number;title:string;badge:string;lesson:string;story1:string[];story2:string[];learned:{title:string;body:string}[];why:string;example:string;parent:string[];reflection:string[];takeaways:string[]};
+export const chapterMeta=[
+['Be a Brave Hitter','Brave Hitter','Courage comes before confidence.'],['Swinging Is Winning','Swing Warrior','20 Brave Swings.'],['Fast Pitch Monster','Pitch Tracker','See the ball early.'],['Strikeout Superheroes','Bounce Back','Next pitch.'],['Secret of Line Drives','Hard Contact Hero','Hard contact.'],['Voice in Your Head','Positive Coach','Replace negative thoughts.'],['Team Captain','Team Leader','Encourage teammates.'],['Brave Swing Challenge','Fearless Swinger','10 Brave Swings.'],['Pressure Is a Privilege','Big Moment Player','Use your routine.'],['Bounce Back Champion','Recovery Master','Measure recovery.'],['Trust Your Training','Confidence Builder','Play free.'],['All-Star Mindset','Brave Hitter Graduate','Confidence is a choice.']
+] as const;
+export const curriculumObjects=chapterMeta.map((c,i)=>({id:`chapter-${i+1}`,type:'chapter' as const,order:i+1,title:c[0],badge:c[1],lesson:c[2],source:'APPROVED_STORYLINE.md'}));
+export const goals=['Taking my swing','Controlling what I can','Staying positive','Resetting after mistakes','Being a great teammate','Having fun'];
+export const thoughts=["I've got this.",'Trust my swing.','Next pitch.','Be brave.',"I've done the work."];
+export const recommendationTags:Record<string,string[]>={hesitation:['chapter-1','chapter-2','chapter-8'],fast_pitching:['chapter-3'],mistakes:['chapter-4','chapter-10'],results:['chapter-5'],self_talk:['chapter-6'],teamwork:['chapter-7'],pressure:['chapter-9'],overthinking:['chapter-11'],confidence:['chapter-12']};
+export function recommend(tags:string[]){return [...new Set(tags.flatMap(t=>recommendationTags[t]??[]))].map(id=>curriculumObjects.find(x=>x.id===id)!).filter(Boolean)}

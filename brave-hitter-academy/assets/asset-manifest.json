@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "canonicalRoot": "assets",
+  "rules": {
+    "productionInputs": "Only entries in this manifest may be used as canonical assets.",
+    "staging": "production/staging is noncanonical and requires approval plus QC before promotion.",
+    "missingAsset": "Stop affected work; do not invent or silently substitute."
+  },
+  "assets": [
+    {"id":"crest","path":"assets/brand/crest.png","kind":"brand","status":"approved-reusable","pixels":[1226,1283],"alpha":true},
+    {"id":"coach-mark-canonical","path":"assets/coach-mark/coach_mark_canonical.png","kind":"character","status":"required","pixels":[1214,1295],"alpha":true},
+    {"id":"gio-canonical","path":"assets/gio/gio_canonical.png","kind":"character","status":"required","pixels":[1024,1536],"alpha":true},
+    {"id":"gio-ready-righty","path":"assets/gio/gio_ready_righty.png","kind":"character-pose","status":"approved-reusable","pixels":[1024,1536],"alpha":true},
+    {"id":"gio-reflect","path":"assets/gio/gio_reflect.png","kind":"character-pose","status":"approved-reusable","pixels":[1024,1536],"alpha":true},
+    {"id":"gio-celebrate","path":"assets/gio/gio_celebrate.png","kind":"character-pose","status":"approved-reusable","pixels":[1024,1536],"alpha":true},
+    {"id":"evening-stadium","path":"assets/environments/evening_stadium.png","kind":"environment","status":"approved-reusable","pixels":[1570,1002],"alpha":false},
+    {"id":"daytime-field","path":"assets/environments/daytime_field.png","kind":"environment","status":"approved-reusable","pixels":[1548,1016],"alpha":false},
+    {"id":"dugout-interior","path":"assets/environments/dugout_interior.png","kind":"environment","status":"approved-reusable","pixels":[1536,1024],"alpha":false},
+    {"id":"sunset-batting-cage","path":"assets/environments/sunset_batting_cage.png","kind":"environment","status":"approved-reusable","pixels":[1536,1024],"alpha":false},
+    {"id":"red-brush","path":"assets/decorations/redbrush.png","kind":"decoration","status":"approved-reusable","pixels":[2172,724],"alpha":true},
+    {"id":"black-brush","path":"assets/decorations/blackbrush.png","kind":"decoration","status":"approved-reusable","pixels":[1891,832],"alpha":true},
+    {"id":"halftone","path":"assets/decorations/halftone.png","kind":"decoration","status":"approved-reusable","pixels":[1536,1024],"alpha":true},
+    {"id":"dirt","path":"assets/decorations/dirt.png","kind":"decoration","status":"approved-reusable","pixels":[1536,1024],"alpha":true},
+    {"id":"burst","path":"assets/decorations/burst.png","kind":"decoration","status":"approved-reusable","pixels":[1536,1024],"alpha":true},
+    {"id":"chapter-01-story-1","path":"assets/story/chapter-1/story_part_1.png","kind":"chapter-art","status":"approved-chapter-specific","pixels":[1570,1002],"alpha":false},
+    {"id":"chapter-01-story-2","path":"assets/story/chapter-1/story_part_2.png","kind":"chapter-art","status":"approved-chapter-specific","pixels":[1522,1033],"alpha":false},
+    {"id":"chapter-02-story-2","path":"assets/story/chapter-2/story_part_2.png","kind":"chapter-art","status":"approved-for-review","pixels":[1426,1103],"alpha":false},
+    {"id":"chapter-03-story-2","path":"assets/story/chapter-3/story_part_2.png","kind":"chapter-art","status":"approved-for-review","pixels":[1426,1103],"alpha":false},
+    {"id":"chapter-04-story-2","path":"assets/story/chapter-4/story_part_2.png","kind":"chapter-art","status":"approved-for-review","pixels":[1427,1102],"alpha":false},
+    {"id":"chapter-05-story-2","path":"assets/story/chapter-5/story_part_2.png","kind":"chapter-art","status":"approved-for-review","pixels":[1427,1102],"alpha":false},
+    {"id":"chapter-06-story-2","path":"assets/story/chapter-6/story_part_2.png","kind":"chapter-art","status":"approved-for-review","pixels":[1426,1103],"alpha":false},
+    {"id":"chapter-07-story-2","path":"assets/story/chapter-7/story_part_2.png","kind":"chapter-art","status":"approved-for-review","pixels":[1536,1024],"alpha":false},
+    {"id":"chapter-08-story-2","path":"assets/story/chapter-8/story_part_2.png","kind":"chapter-art","status":"approved-for-review","pixels":[1536,1024],"alpha":false},
+    {"id":"chapter-09-story-2","path":"assets/story/chapter-9/story_part_2.png","kind":"chapter-art","status":"approved-for-review","pixels":[1536,1024],"alpha":false},
+    {"id":"chapter-10-story-2","path":"assets/story/chapter-10/story_part_2.png","kind":"chapter-art","status":"approved-for-review","pixels":[1536,1024],"alpha":false},
+    {"id":"chapter-11-story-2","path":"assets/story/chapter-11/story_part_2.png","kind":"chapter-art","status":"approved-for-review","pixels":[1536,1024],"alpha":false},
+    {"id":"chapter-12-story-2","path":"assets/story/chapter-12/story_part_2.png","kind":"chapter-art","status":"approved-for-review","pixels":[1536,1024],"alpha":false}
+  ],
+  "provenance": "production/ASSET_PROVENANCE.md"
+}
