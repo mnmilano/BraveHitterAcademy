@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-09-12",
+  "updatedAt": "2026-09-14",
   "currentChapter": {
     "number": 12,
-    "status": "produced-qc-passed-awaiting-approval",
+    "status": "approved-baseline",
     "workbookPages": "91-97",
     "output": "production/pages/chapter-12"
   },
@@ -25,30 +25,27 @@
       "notes": ["Game Day Journal pages 117-156 have QC-log and final-preflight PASS evidence but no section-local preflight.json."]
     },
     "approved": {
-      "pages": ["14-20", "157-162"],
+      "pages": ["1-162"],
       "meaning": "Explicit approval is recorded in authoritative QC evidence.",
-      "evidence": ["qc/PAGE_QC_LOG.md:157", "qc/SECTION_QC_LOG.md:6", "qc/SECTION_QC_LOG.md:10"]
+      "evidence": ["qc/APPROVAL_LOG.md"]
     },
     "requiresRepair": {
       "pages": [],
       "meaning": "No unresolved page or component failure is recorded."
     }
   },
-  "approvalPending": {
-    "pages": ["1-13", "21-156"],
-    "meaning": "Produced and QC-passed, but not explicitly approved in the current evidence."
-  },
+  "approvalPending": {"pages": [], "meaning": "No workbook pages are awaiting baseline approval."},
   "workbook": {
     "productionStatus": "produced",
     "qcStatus": "PASS",
-    "approvalStatus": "partially-approved",
+    "approvalStatus": "approved-baseline",
     "master": "production/final/brave-hitter-academy-final-workbook.pdf",
     "sha256": "058f19209f24972993660b521dc86d2177baaa294223bbd253833f0694f5115f"
   },
   "nextAction": {
-    "type": "user-approval",
-    "scope": ["1-13", "21-156"],
-    "instruction": "Obtain explicit visual approval for pending pages. Do not begin new chapter production and do not modify workbook pages during workflow validation.",
-    "read": ["qc/SECTION_QC_LOG.md", "qc/PAGE_QC_LOG.md"]
+    "type": "app-v1-implementation",
+    "scope": ["complete-approved-curriculum", "required-product-flows"],
+    "instruction": "Use the 162-page workbook as the approved V1 baseline. Track later user-requested workbook tweaks as targeted revisions without blocking app implementation.",
+    "read": ["docs/PRODUCT_SPEC.md", "docs/ARCHITECTURE.md", "docs/PRIVACY_SECURITY.md", "docs/CONTENT_MIGRATION.md"]
   }
 }
