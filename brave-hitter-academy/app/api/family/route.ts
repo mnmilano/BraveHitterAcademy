@@ -20,7 +20,7 @@ export async function POST(request:Request){
   if(existing)return NextResponse.json({error:'Family already exists'},{status:409});
   const {data:family,error}=await admin.from('families').insert({owner_id:user.id}).select('id').single();if(error)return NextResponse.json({error:'Could not create family'},{status:500});
   const player={id:crypto.randomUUID(),name,age,completed:[],reflections:[],games:[]};
-  const state={players:[player],activePlayerId:player.id};
+  const state={players:[player],activePlayerId:player.id,onboardingGuideVersion:0};
   const pinHash=await hashPin(pin);
   const writes=await Promise.all([
     admin.from('consents').insert({family_id:family.id,adult_confirmed:true,terms_version:'draft-v1',privacy_version:'draft-v1'}),
@@ -36,7 +36,7 @@ export async function PUT(request:Request){
   const user=await authenticatedUser(request);if(!user)return NextResponse.json({error:'Unauthorized'},{status:401});
   const body=await request.json();const admin=createSupabaseAdmin();
   const {data:family}=await admin.from('families').select('id').eq('owner_id',user.id).maybeSingle();if(!family)return NextResponse.json({error:'No family'},{status:404});
-  const state={players:Array.isArray(body.players)?body.players:[],activePlayerId:String(body.activePlayerId??'')};
+  const state={players:Array.isArray(body.players)?body.players:[],activePlayerId:String(body.activePlayerId??''),onboardingGuideVersion:body.onboardingGuideVersion===1?1:0};
   const {error}=await admin.from('family_app_state').upsert({family_id:family.id,state});
   return error?NextResponse.json({error:'Save failed'},{status:500}):NextResponse.json({saved:true});
 }
